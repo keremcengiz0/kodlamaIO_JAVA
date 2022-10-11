@@ -1,0 +1,24 @@
+--Select 
+--Select * from Customers --Tablonun tamamını getirir.
+--Select ContactName,Address,City from Customers --İstenilen tabloları getirir.
+--Select ContactName Adi,Address Adresi,City Sehir from Customers
+--SELECT * FROM Customers WHERE City = 'London' --Tüm müşterileri tüm kolonlarıyla getir. Ama şehri London olanları getir demek.
+--SELECT * FROM Products WHERE CategoryID = 1 or CategoryId = 3  --Tüm ürünleri tüm kolonlarıyla getir. Ama categoryID=1 veya 3 olanları getir demek.
+--SELECT * FROM Products WHERE CategoryID = 1 and Price >=10
+--SELECT * FROM Products WHERE CategoryID = 1 ORDER BY ProductName --Order by komutu sıralamayı sağlar. Default olarak ascending(artan) olarak sıralar.
+--SELECT * FROM Products ORDER BY CategoryID,ProductName --Önce CategoryID'ye göre daha sonra onları da kendi içinde ProductName'e göre sıralar.
+--SELECT * FROM Products ORDER BY CategoryID asc --Default olarak ascending(artan) olarak sıralar. 
+--SELECT * FROM Products ORDER BY CategoryID desc --descending(azalan) şeklinde sıralar.
+--SELECT * FROM Products where CategoryID=1 ORDER BY Price asc,ProductName
+--SELECT COUNT(*) FROM Products --Tüm productsların sayısını verir
+--SELECT COUNT(*) FROM Products WHERE CategoryID=2
+--SELECT CategoryID, COUNT(*) FROM Products GROUP BY CategoryID -- Her kategori için bir grup oluşur. Tablo oluşuyor gibi düşün. Bu şekilde her categoryID'deki ürünlerin sayısını tablo olarak verir.
+--SELECT CategoryID, COUNT(*) FROM Products GROUP BY CategoryID HAVING COUNT(*)<10 --Ürün sayıları 10'dan az olan katogorileri listele.
+--SELECT CategoryID, COUNT(*) FROM Products WHERE Price>20 GROUP BY CategoryID HAVING COUNT(*)<10 --Önce her zaman where çalışır. Fiyatı 20'den fazla ürünleri CtegoryID'ye göre grupla, grupta sayısı 10'dan az olanları listele.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--SELECT * FROM Products INNER JOIN Categories ON Products.CategoryID = Categories.CategoryID
+--SELECT * FROM Customers c INNER JOIN Orders o on c.CustomerID = o.CustomerID
+--SELECT * FROM Customers c LEFT JOIN Orders o on c.CustomerID = o.CustomerID
+--SELECT * FROM Customers c LEFT JOIN Orders o on c.CustomerID = o.CustomerID WHERE o.CustomerID is null
+
+
